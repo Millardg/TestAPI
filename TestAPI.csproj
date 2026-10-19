@@ -8,6 +8,8 @@
     <!-- CS1591: missing XML comment. Public surface is documented where it matters; don't fail on the rest. -->
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- The test project lives under tests/; keep its sources out of this project's globs. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);tests/**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
