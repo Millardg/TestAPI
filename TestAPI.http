@@ -1,6 +1,19 @@
 @TestAPI_HostAddress = http://localhost:5009
 
-GET {{TestAPI_HostAddress}}/weatherforecast/
+### 7-day forecast (default)
+GET {{TestAPI_HostAddress}}/api/weatherforecast/Seattle
+Accept: application/json
+
+### 3-day forecast
+GET {{TestAPI_HostAddress}}/api/weatherforecast/Paris?days=3
+Accept: application/json
+
+### 400: days out of range
+GET {{TestAPI_HostAddress}}/api/weatherforecast/Tokyo?days=30
+Accept: application/json
+
+### 404: unknown city
+GET {{TestAPI_HostAddress}}/api/weatherforecast/Xyzzyqq
 Accept: application/json
 
 ###
